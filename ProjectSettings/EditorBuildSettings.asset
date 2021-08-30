@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Oculus/SampleFramework/Usage/Passthrough/Scenes/AugmentedObjects.unity
-    guid: 9afeada2bbd240b4981cfb6abb525418
+    path: Assets/Scenes/PhysicsObjects.unity
+    guid: bc06c7443e704f545883168c751b5c1f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 25399d534df8f7447a0f8fa7a948b9e5,
       type: 2}
@@ -16,4 +16,6 @@ EditorBuildSettings:
     com.unity.input.settings: {fileID: 11400000, guid: 7c0d65f8139523c47a3ac0b1587ccdf6,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f2401e20afe6297419dfd03dd69914f9,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: e4df5220fa44aea4db12900edfbae010,
       type: 2}

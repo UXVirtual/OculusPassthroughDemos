@@ -8,18 +8,22 @@ public class BoundaryVisualizer : MonoBehaviour
     private void Start()
     {
         //Check if the boundary is configured
-        var configured = OVRManager.boundary.GetConfigured();
+        bool configured = OVRManager.boundary.GetConfigured();
 
         if (configured)
         {
             //Grab all the boundary points. Setting BoundaryType to OuterBoundary is necessary
-            var playAreaPoints = OVRManager.boundary.GetGeometry(OVRBoundary.BoundaryType.PlayArea);
+            Vector3[] playAreaPoints = OVRManager.boundary.GetGeometry(OVRBoundary.BoundaryType.PlayArea);
 
             //Generate a bunch of tall thin cubes to mark the outline
-            foreach (var pos in playAreaPoints)
+            foreach (Vector3 pos in playAreaPoints)
             {
-                var boundaryPoint = Instantiate(wallMarker, pos, Quaternion.identity);
+                GameObject boundaryPoint = Instantiate(wallMarker, pos, Quaternion.identity);
             }
+        }
+        else
+        {
+            Debug.LogWarning("Oculus boundary not configured. You may be running in Link mode which is not supported.");
         }
     }
 
